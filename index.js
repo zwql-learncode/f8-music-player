@@ -1,3 +1,5 @@
+import { collectionOldPopSongs as songs } from "./data.js";
+
 //user config(local storage)
 const USER_STORAGE_KEY = "MUSIC_PLAYER";
 //header
@@ -23,44 +25,7 @@ const app = {
   isRandom: false,
   isRepeat: false,
   userConfig: JSON.parse(localStorage.getItem(USER_STORAGE_KEY)) || {},
-  songs: [
-    {
-      name: "Don't Look Back In Anger",
-      singer: "Oasis",
-      path: "./assets/music/oasis.mp3",
-      image: "./assets/img/oasis.jpg",
-    },
-    {
-      name: "Isn't She Lovely",
-      singer: "Stevie Wonder",
-      path: "./assets/music/stevie-wonder.mp3",
-      image: "./assets/img/stevie-wonder.jpg",
-    },
-    {
-      name: "A Little Bit Like Magic",
-      singer: "King Harvest",
-      path: "./assets/music/king-harvest.mp3",
-      image: "./assets/img/king-harvest.jpg",
-    },
-    {
-      name: "Country Road",
-      singer: "John Denver",
-      path: "./assets/music/john-denver.mp3",
-      image: "./assets/img/john-denver.jpg",
-    },
-    {
-      name: "Stand By Me",
-      singer: "Ben E. King",
-      path: "./assets/music/ben-e-king.mp3",
-      image: "./assets/img/ben-e-king.jpg",
-    },
-    {
-      name: "September",
-      singer: "Earth, Wind & Fire",
-      path: "./assets/music/earth-wind&fire.mp3",
-      image: "./assets/img/earth-wind&fire.jpg",
-    },
-  ],
+  songs: songs,
   setUserConfig: function (key, value) {
     this.userConfig[key] = value;
     localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(this.userConfig));
